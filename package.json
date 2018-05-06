@@ -4,9 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "parcel src/app.ts"
+    "build": "parcel build src/app.ts",
+    "start": "yarn build && node dist/app.js",
+    "do": "node dist/app.js"
   },
   "dependencies": {
+    "@types/node": "^10.0.4",
     "typescript": "^2.8.3"
   }
 }

@@ -12,6 +12,7 @@ class Oath<T>{
 
   emitter: EventEmitter;
   value: T|null = null;
+  callbacks = [] as Function[];
   constructor(callback: (resolve: Resolve<T>) => void) {
     this.emitter = new EventEmitter;
     
@@ -19,6 +20,9 @@ class Oath<T>{
       this.value = payload;
       console.log('Oath resolved:');
       console.log(payload);
+      this.callbacks.forEach( (cb) => {
+        cb(payload);
+      } );
     });
 
     const resolveFunction = (payload: T) => {
@@ -26,6 +30,11 @@ class Oath<T>{
     }
 
     callback(resolveFunction);
+  }
+
+  then(callback: (payload: T) => Oath<T>| null): Oath<T>|null {
+    this.callbacks.push(callback);
+    return null;
   }
 
 }

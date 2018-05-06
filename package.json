@@ -1,0 +1,12 @@
+{
+  "name": "promise-implementation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel src/app.ts"
+  },
+  "dependencies": {
+    "typescript": "^2.8.3"
+  }
+}

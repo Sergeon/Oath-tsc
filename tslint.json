@@ -1,0 +1,31 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": ["src/vendor/**/**.vue"]
+  },
+  "rules": {
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "only-arrow-functions":false,
+    "no-unused-variable": true,
+    "no-inferrable-types": true,
+    "no-parameter-reassignment": true,
+    "promise-function-async": false,
+    "await-promise": true,
+    "cyclomatic-complexity": [true, 10],
+    "array-type": [true, "array"],
+    "no-consecutive-blank-lines": true,
+    "newline-before-return": false,
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+    "arrow-parens": false,
+    "member-ordering": [false],
+    "unified-signatures": false,
+    
+  }
+}

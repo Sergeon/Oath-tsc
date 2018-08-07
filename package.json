@@ -6,10 +6,29 @@
   "scripts": {
     "build": "parcel build src/app.ts",
     "start": "yarn build && node dist/app.js",
-    "do": "node dist/app.js"
+    "do": "node dist/app.js",
+    "watch": "parcel watch src/app.ts",
+    "test": "jest"
   },
   "dependencies": {
+    "@types/jest": "^22.2.3",
     "@types/node": "^10.0.4",
+    "jest": "^22.4.4",
+    "ts-jest": "^22.4.6",
     "typescript": "^2.8.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
